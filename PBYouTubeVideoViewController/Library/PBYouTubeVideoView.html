@@ -89,32 +89,6 @@
                 document.location = url;
             }
 
-            // Action functions
-            function playVideo() {
-                player.playVideo();
-            }
-
-            function pauseVideo() {
-                player.pauseVideo();
-            }
-
-            function stopVideo() {
-                player.stopVideo();
-            }
-
-            function seekTo(seconds) {
-                player.seekTo(seconds, true);
-            }
-
-            // Accessors
-            function setPlayerSize(width, height) {
-                player.setSize(width, height);
-            }
-
-            function getPlayerState() {
-                return player.getPlayerState();
-            }
-
             // Helpers
             function playerStateToString(playerState) {
                 var result = null;

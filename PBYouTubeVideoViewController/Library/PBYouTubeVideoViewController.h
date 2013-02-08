@@ -42,6 +42,18 @@ extern NSString *const PBYouTubePlayerEventApiChange;
  */
 - (void)setPlayerSize:(CGSize)playerSize;
 
+/**
+ * Duration of the video.
+ * Note that the value is available only after the video metadata is loaded,
+ * which normally happens just after the video starts playing.
+ */
+@property (nonatomic, assign, readonly) NSTimeInterval duration;
+
+/**
+ * Get the elapsed time since the video started playing.
+ */
+@property (nonatomic, assign, readonly) NSTimeInterval currentTime;
+
 @end
 
 

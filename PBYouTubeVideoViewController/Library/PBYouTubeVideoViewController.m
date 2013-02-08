@@ -77,17 +77,17 @@ const CGFloat YouTubeStandardPlayerHeight = 390;
 
 - (void)play
 {
-    [self.webView stringByEvaluatingJavaScriptFromString:@"playVideo();"];
+    [self.webView stringByEvaluatingJavaScriptFromString:@"player.playVideo();"];
 }
 
 - (void)pause
 {
-    [self.webView stringByEvaluatingJavaScriptFromString:@"pauseVideo();"];
+    [self.webView stringByEvaluatingJavaScriptFromString:@"player.pauseVideo();"];
 }
 
 - (void)stop
 {
-    [self.webView stringByEvaluatingJavaScriptFromString:@"stopVideo();"];
+    [self.webView stringByEvaluatingJavaScriptFromString:@"player.stopVideo();"];
 }
 
 #pragma mark - Accessors
@@ -95,8 +95,18 @@ const CGFloat YouTubeStandardPlayerHeight = 390;
 - (void)setPlayerSize:(CGSize)playerSize
 {
     [self.webView stringByEvaluatingJavaScriptFromString:
-            [NSString stringWithFormat:@"setPlayerSize(%u, %u);",
+            [NSString stringWithFormat:@"player.setSize(%u, %u);",
                             (unsigned int) playerSize.width, (unsigned int) playerSize.height]];
+}
+
+- (NSTimeInterval)duration
+{
+    return [[self.webView stringByEvaluatingJavaScriptFromString:@"player.getDuration();"] doubleValue];
+}
+
+- (NSTimeInterval)currentTime
+{
+    return [[self.webView stringByEvaluatingJavaScriptFromString:@"player.getCurrentTime();"] doubleValue];
 }
 
 #pragma mark - Helpers
