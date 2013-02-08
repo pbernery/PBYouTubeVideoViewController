@@ -16,6 +16,8 @@
 		828B1B6116C52D5A003EF154 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 828B1B6016C52D5A003EF154 /* Default.png */; };
 		828B1B6316C52D5A003EF154 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 828B1B6216C52D5A003EF154 /* Default@2x.png */; };
 		828B1B6516C52D5A003EF154 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 828B1B6416C52D5A003EF154 /* Default-568h@2x.png */; };
+		828B1B6D16C52D9C003EF154 /* PBYouTubeVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 828B1B6C16C52D9C003EF154 /* PBYouTubeVideoViewController.m */; };
+		C509B83B2954013C270FF432 /* PBYouTubeVideoView.html in Resources */ = {isa = PBXBuildFile; fileRef = C509B3118BA2077B900F5C6D /* PBYouTubeVideoView.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		828B1B6016C52D5A003EF154 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		828B1B6216C52D5A003EF154 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		828B1B6416C52D5A003EF154 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		828B1B6B16C52D9C003EF154 /* PBYouTubeVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBYouTubeVideoViewController.h; path = Library/PBYouTubeVideoViewController.h; sourceTree = "<group>"; };
+		828B1B6C16C52D9C003EF154 /* PBYouTubeVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBYouTubeVideoViewController.m; path = Library/PBYouTubeVideoViewController.m; sourceTree = "<group>"; };
+		C509B3118BA2077B900F5C6D /* PBYouTubeVideoView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = PBYouTubeVideoView.html; path = Library/PBYouTubeVideoView.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,7 @@
 		828B1B5416C52D5A003EF154 /* PBYouTubeVideoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				828B1B6E16C52DA3003EF154 /* Library */,
 				828B1B5D16C52D5A003EF154 /* PBAppDelegate.h */,
 				828B1B5E16C52D5A003EF154 /* PBAppDelegate.m */,
 				828B1B5516C52D5A003EF154 /* Supporting Files */,
@@ -97,6 +103,16 @@
 				828B1B6416C52D5A003EF154 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		828B1B6E16C52DA3003EF154 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				828B1B6B16C52D9C003EF154 /* PBYouTubeVideoViewController.h */,
+				828B1B6C16C52D9C003EF154 /* PBYouTubeVideoViewController.m */,
+				C509B3118BA2077B900F5C6D /* PBYouTubeVideoView.html */,
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +171,7 @@
 				828B1B6116C52D5A003EF154 /* Default.png in Resources */,
 				828B1B6316C52D5A003EF154 /* Default@2x.png in Resources */,
 				828B1B6516C52D5A003EF154 /* Default-568h@2x.png in Resources */,
+				C509B83B2954013C270FF432 /* PBYouTubeVideoView.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +184,7 @@
 			files = (
 				828B1B5B16C52D5A003EF154 /* main.m in Sources */,
 				828B1B5F16C52D5A003EF154 /* PBAppDelegate.m in Sources */,
+				828B1B6D16C52D9C003EF154 /* PBYouTubeVideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +266,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PBYouTubeVideoViewController/PBYouTubeVideoViewController-Prefix.pch";
 				INFOPLIST_FILE = "PBYouTubeVideoViewController/PBYouTubeVideoViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -259,6 +278,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PBYouTubeVideoViewController/PBYouTubeVideoViewController-Prefix.pch";
 				INFOPLIST_FILE = "PBYouTubeVideoViewController/PBYouTubeVideoViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
