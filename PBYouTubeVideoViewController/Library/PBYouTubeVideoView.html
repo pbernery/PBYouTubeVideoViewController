@@ -6,6 +6,7 @@
     <head>
        <style>
            html, body {
+               width: 100%%;
                height: 100%%;
            }
 
@@ -16,19 +17,21 @@
 
            #container {
                display: table;
+               width: 100%%;
                height: 100%%;
            }
 
            #child {
                display: table-cell;
                vertical-align: middle;
+               text-align: center;
            }
        </style>
     </head>
     <body>
         <div id="container">
             <div id="child">
-                <iframe id="player" type="text/html" width="320" height="195"
+                <iframe id="player" type="text/html" width="%@" height="%@"
                     src="http://www.youtube.com/embed/%@?enablejsapi=1"
                     frameborder="0">
                 </iframe>

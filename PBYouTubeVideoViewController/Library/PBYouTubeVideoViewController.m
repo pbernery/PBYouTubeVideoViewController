@@ -122,21 +122,28 @@ const CGFloat YouTubeStandardPlayerHeight = 390;
         LOG_ERROR(error);
     }
 
-    NSString *result = [NSString stringWithFormat:template, self.videoId];
+    CGSize playerSize = [self playerSize];
+    NSString *result = [NSString stringWithFormat:template,
+                    [NSString stringWithFormat:@"%.0f", playerSize.width],
+                    [NSString stringWithFormat:@"%.0f", playerSize.height],
+                    self.videoId];
     return result;
 }
 
 - (void)updatePlayerSize
 {
-    float ratio = 1;
-    if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
-        ratio = self.view.bounds.size.height / YouTubeStandardPlayerHeight;
-    } else {
-        ratio = self.view.bounds.size.width / YouTubeStandardPlayerWidth;
-    }
+    CGSize playerSize = [self playerSize];
+    [self setPlayerSize:playerSize];
+}
+
+- (CGSize)playerSize
+{
+    float heightRatio = self.view.bounds.size.height / YouTubeStandardPlayerHeight;
+    float widthRatio = self.view.bounds.size.width / YouTubeStandardPlayerWidth;
+    float ratio = MIN(widthRatio, heightRatio);
 
     CGSize playerSize = CGSizeMake(YouTubeStandardPlayerWidth * ratio, YouTubeStandardPlayerHeight * ratio);
-    [self setPlayerSize:playerSize];
+    return playerSize;
 }
 
 #pragma mark - UIWebViewDelegate
