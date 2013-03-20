@@ -26,6 +26,8 @@ const CGFloat YouTubeStandardPlayerHeight = 390;
 @property (nonatomic, strong) NSString *videoId;
 @property (nonatomic, strong) UIWebView *webView;
 
+@property (nonatomic, assign) BOOL firstPageLoaded;
+
 @end
 
 
@@ -63,6 +65,7 @@ const CGFloat YouTubeStandardPlayerHeight = 390;
 {
     [super viewWillAppear:animated];
 
+    self.firstPageLoaded = NO;
     [self.webView loadHTMLString:[self htmlContent] baseURL:nil];
 }
 
@@ -157,6 +160,15 @@ const CGFloat YouTubeStandardPlayerHeight = 390;
             NSString *actionData = nil;
             if ([components count] > 2) {
                 actionData = components[2];
+            }
+
+            if ([actionName isEqualToString:PBYouTubePlayerEventReady] && !self.firstPageLoaded) {
+                // The YouTube player is reader meaning it accepts JS commands.
+                // The player may not have the right size in some obscure circumstances
+                // (especially on iPad). We resize it.
+                [self updatePlayerSize];
+
+                self.firstPageLoaded = YES;
             }
 
             [self.delegate youTubeVideoViewController:self didReceiveEventNamed:actionName eventData:actionData];
